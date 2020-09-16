@@ -1,0 +1,30 @@
+<style>
+    .box {
+        background-color: skyblue;
+        border: 5px solid red;
+        /* overflow: auto; */
+        /* 
+            flow-root是一个新的块级布局，在block布局的基础上，对子元素的float属性显示效果进行了修正
+            我们知道block布局存在高度塌陷的问题，即block布局不会考虑float元素的大小，float元素很大时，会出现float元素溢出容器的情况
+            我们只需改动一个属性，将容器的display属性从block改为flow-root，就可以解决这个问题
+            */
+        display: flow-root;
+    }
+
+    .float {
+        float: left;
+        width: 200px;
+        height: 150px;
+        background-color: white;
+        border: 1px solid black;
+        padding: 10px;
+    }
+</style>
+
+
+<body>
+    <div class="box">
+        <div class="float">这是一个浮动的元素</div>
+        <p>这是一个更大的容器</p>
+    </div>
+</body>
